@@ -63,35 +63,29 @@ function f_drop(event){
 function cook(idName) {
 	// 洗剤
 	if (dropItems["senzai"] == "senzai"){
-		document.writeln("次の日");
-		document.write('<img src="Img/shippai.jpg" width="300" height="250" />');
+		window.location.href = './cookingResult.html?param=fail'
 	} // カレーライス
 	else if (dropItems["curry"] == "curry" &&
 		dropItems["rice"] == "rice") {
-			document.writeln("カレーライスの完成です！");
-			document.write('<img src="Img/CurryRice.png" width="300" height="250" />');
+		window.location.href = './cookingResult.html?param=curryrice'
 	// カレー
 	} else if(dropItems["curry"] == "curry") {
-		document.writeln("カレーの完成です！");
-		document.write('<img src="Img/currywithoutrice.jpg" width="300" height="250" />');
+		window.location.href = './cookingResult.html?param=curry'
 	// 親子丼
 	} else if (
 		dropItems["rice"] == "rice" &&
 		dropItems["egg"] == "egg" && dropItems["chicken"] == "chicken" && 
 		(Object.keys(dropItems).length == 3 || ( (dropItems["onion"] == "onion" || dropItems["ginger"] == "ginger") && Object.keys(dropItems).length == 4 ) || ( (dropItems["onion"] == "onion" && dropItems["ginger"] == "ginger") && Object.keys(dropItems).length == 5 ) )) {
-			document.writeln("親子丼の完成です！");
-			document.write('<img src="Img/oyakodon.jpg" width="300" height="250" />');
+		window.location.href = './cookingResult.html?param=oyakodon'
 	// 他人丼
 	} else if (dropItems["rice"] == "rice" &&
 		dropItems["egg"] == "egg" && dropItems["pork"] == "pork" &&  (Object.keys(dropItems).length == 3 || ( (dropItems["onion"] == "onion" || dropItems["ginger"] == "ginger") && Object.keys(dropItems).length == 4 ) || ( (dropItems["onion"] == "onion" && dropItems["ginger"] == "ginger") && Object.keys(dropItems).length == 5 ) ) ) 
 	{
-			document.writeln("他人丼の完成です！");
-			document.write('<img src="Img/tanindon.png" width="300" height="250" />');
+		window.location.href = './cookingResult.html?param=tanindon'
 	// 卵かけご飯
 	} else if (dropItems["rice"] == "rice" && dropItems["egg"] == "egg" && 
 		(Object.keys(dropItems).length == 2 || (Object.keys(dropItems).length == 3 && dropItems["ginger"] == "ginger"))) {
-			document.writeln("卵かけご飯の完成です！");
-			document.write('<img src="Img/eggRice.png" width="300" height="250" />');
+		window.location.href = './cookingResult.html?param=eggrice'
 	// 肉じゃが
 	} else if ( dropItems["onion"] == "onion" && 
 				dropItems["pork"] == "pork" && 
@@ -99,8 +93,7 @@ function cook(idName) {
 				dropItems["potato"] == "potato" && (Object.keys(dropItems).length == 4 ||
 					(Object.keys(dropItems).length == 5 && dropItems["ginger"] == "ginger")
 					)) {
-					document.writeln("肉じゃがの完成です！");
-					document.write('<img src="Img/NikuJaga.jpeg" width="300" height="250" />');					
+					window.location.href = './cookingResult.html?param=nikujaga'		
 	} else {
 		alert("メニューにありません。\n 作り直してください。");
 	}

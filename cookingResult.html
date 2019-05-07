@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>Cooking Result</title>
+</head>
+
+<body>
+<script>
+	var arg = new Object;
+	var pair=location.search.substring(1).split('&');
+	for(var i=0;pair[i];i++) {
+	    var kv = pair[i].split('=');
+	    arg[kv[0]]=kv[1];
+	}
+	var param = arg.param
+	if(param == 'fail'){
+		document.writeln("次の日");
+		document.write('<img src="Img/shippai.jpg" width="300" height="250" />');
+	} else if (param == 'curryrice') {
+		document.writeln("カレーライスの完成です！");
+		document.write('<img src="Img/CurryRice.png" width="300" height="250" />');
+	} else if(param == 'curry') {
+		document.writeln("カレーの完成です！");
+		document.write('<img src="Img/currywithoutrice.jpg" width="300" height="250" />');
+	} else if(param == 'oyakodon'){
+		document.writeln("親子丼の完成です！");
+		document.write('<img src="Img/oyakodon.jpg" width="300" height="250" />');
+	} else if(param == 'tanindon'){
+		document.writeln("他人丼の完成です！");
+		document.write('<img src="Img/tanindon.png" width="300" height="250" />');
+	} else if(param == 'eggrice'){
+		document.writeln("卵かけご飯の完成です！");
+		document.write('<img src="Img/eggRice.png" width="300" height="250" />');
+	} else if(param == 'nikujaga'){
+		document.writeln("肉じゃがの完成です！");
+		document.write('<img src="Img/NikuJaga.jpeg" width="300" height="250" />');	
+	} else{
+		document.writeln("Not Found!")
+	}
+</script>
+<p><a href="#" onClick="history.back(); return false;">前のページにもどる</a></p>
+</body>
+</html>
