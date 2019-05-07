@@ -67,16 +67,23 @@ function cook(idName) {
 		dropItems["potato"] == "potato" && 
 		dropItems["chicken"] == "chicken" && 
 		dropItems["curry"] == "curry" &&
-		dropItems["rice"] == "rice") {
+		dropItems["rice"] == "rice" && 
+		Object.keys(dropItems).length == 6) {
 			document.writeln("カレーライスの完成です！");
 			document.write('<img src="Img/CurryRice.png" width="300" height="250" />');
 	// 肉じゃが
 	} else if ( dropItems["onion"] == "onion" && 
 				dropItems["pork"] == "pork" && 
 				dropItems["carrot"] == "carrot" && 
-				dropItems["potato"] == "potato" ) {
+				dropItems["potato"] == "potato" && 
+				Object.keys(dropItems).length == 4) {
 					document.writeln("肉じゃがの完成です！");
 					document.write('<img src="Img/NikuJaga.jpeg" width="300" height="250" />');					
+	} else if ( dropItems["pork"] == "pork" &&
+				dropItems["ginger"] == "ginger" && 
+				Object.keys(dropItems).length == 2) {
+					document.writeln("生姜焼きの完成です！");
+					document.write('<img src="Img/GingerPork.png" width="300" height="250" />');
 	} else {
 		alert("メニューにありません。\n 作り直してください。");
 	}
@@ -172,6 +179,16 @@ function cook(idName) {
 	ondragstart="f_dragstart(event)"
 >
 <img 
+	src="Img/PowerWash.jpeg"
+	id="wash" 
+	width="125"
+	height="90"
+	hspace="5"
+	vspace="5"
+	draggable="true" 
+	ondragstart="f_dragstart(event)"
+>
+<img 
 	src="Img/Ginger.png"
 	id="ginger" 
 	width="125"
@@ -182,6 +199,8 @@ function cook(idName) {
 	ondragstart="f_dragstart(event)"
 >
 </div>
+
+<p>こちらに材料を並べてください。</p>
 
 <div 
 	id="kichen" 
