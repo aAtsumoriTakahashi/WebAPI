@@ -101,8 +101,7 @@ function cook(idName) {
 		dropItems["pork"] == "pork" &&
 		dropItems["egg"] == "egg" &&
 		Object.keys(dropItems).length == 2) {
-			document.writeln("ピカタの完成です！");
-			document.write('<img src="Img/Pikata.png" width="300" height="250" />');
+			window.location.href = './cookingResult.html?param=pikata'
 	} else {
 		alert("メニューにありません。\n 作り直してください。");
 	}
