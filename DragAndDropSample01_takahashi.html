@@ -96,6 +96,13 @@ function cook(idName) {
 			(dropItems["ginger"] == "ginger" && dropItems["carrot"] == "carrot"))) ||
 		(Object.keys(dropItems).length == 5 && dropItems["onion"] == "onion" && dropItems["carrot"] == "carrot" && dropItems["ginger"] == "ginger"))) {
 					window.location.href = './cookingResult.html?param=nikujaga'		
+	// ピカタ
+	} else if (
+		dropItems["pork"] == "pork" &&
+		dropItems["egg"] == "egg" &&
+		Object.keys(dropItems).length == 2) {
+			document.writeln("ピカタの完成です！");
+			document.write('<img src="Img/Pikata.png" width="300" height="250" />');
 	} else {
 		alert("メニューにありません。\n 作り直してください。");
 	}
