@@ -87,12 +87,14 @@ function cook(idName) {
 		(Object.keys(dropItems).length == 2 || (Object.keys(dropItems).length == 3 && dropItems["ginger"] == "ginger"))) {
 		window.location.href = './cookingResult.html?param=eggrice'
 	// 肉じゃが
-	} else if ( dropItems["onion"] == "onion" && 
-				dropItems["pork"] == "pork" && 
-				dropItems["carrot"] == "carrot" && 
-				dropItems["potato"] == "potato" && (Object.keys(dropItems).length == 4 ||
-					(Object.keys(dropItems).length == 5 && dropItems["ginger"] == "ginger")
-					)) {
+	} else if (dropItems["potato"] == "potato" && dropItems["pork"] == "pork" && 
+		(Object.keys(dropItems).length == 2 || 
+			(Object.keys(dropItems).length == 3 && (dropItems["onion"] == "onion" || dropItems["carrot"] == "carrot" || dropItems["ginger"] == "ginger")) ||
+		(Object.keys(dropItems).length == 4 && (
+			(dropItems["onion"] == "onion" && dropItems["carrot"] == "carrot") ||
+			(dropItems["onion"] == "onion" && dropItems["ginger"] == "ginger") ||
+			(dropItems["ginger"] == "ginger" && dropItems["carrot"] == "carrot"))) ||
+		(Object.keys(dropItems).length == 5 && dropItems["onion"] == "onion" && dropItems["carrot"] == "carrot" && dropItems["ginger"] == "ginger"))) {
 					window.location.href = './cookingResult.html?param=nikujaga'		
 	} else {
 		alert("メニューにありません。\n 作り直してください。");
